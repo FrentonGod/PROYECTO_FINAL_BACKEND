@@ -1,0 +1,11 @@
+En mariadb
+sudo mariadb
+CREATE USER 'prueba2'@'localhost' IDENTIFIED BY '1234'; 
+CREATE DATABASE Lista;
+GRANT ALL PRIVILEGES ON Lista.* TO 'prueba2'@'localhost';
+FLUSH PRIVILEGES;
+En tu usuario creado
+mysql -u prueba2 -p
+use Lista
+CREATE TABLE trabajador(IDT INT AUTO_INCREMENT PRIMARY KEY, CVT CHAR(3), Nombre VARCHAR(255) NOT NULL, Telefono CHAR(4), Activo CHAR(1) NOT NULL, Creación TIMESTAMP DEFAULT CURRENT_TIMESTAMP());
+CREATE TABLE horario (ID INT AUTO_INCREMENT PRIMARY KEY, CVT CHAR(3), Nombre VARCHAR(255) NOT NULL, HoraInicio TIME, HoraFinal TIME, Horashechas INT(2) NOT NULL, Fecha DATE);
